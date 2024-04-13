@@ -1,23 +1,26 @@
-[gd_scene load_steps=2 format=3 uid="uid://b0qxgye6loht"]
+[gd_scene load_steps=4 format=3 uid="uid://b0qxgye6loht"]
 
-[ext_resource type="Shape2D" uid="uid://btye8falsh2kv" path="res://PongPaddle.tres" id="1_kcl7y"]
+[ext_resource type="Texture2D" uid="uid://cpfm3np2iu752" path="res://back2.png" id="1_qrawv"]
+[ext_resource type="Texture2D" uid="uid://d1qe6uclsa6gk" path="res://paddal.png" id="2_ch1lr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_df468"]
+size = Vector2(5, 25)
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Paddle" type="Area2D" parent="."]
+[node name="Back2" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(99, 38)
+texture = ExtResource("1_qrawv")
 
-[node name="PongPaddle" type="CollisionShape2D" parent="Paddle"]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
-position = Vector2(50, 350)
-shape = ExtResource("1_kcl7y")
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(7, 21)
 
-[node name="Control" type="Control" parent="Paddle/PongPaddle"]
-layout_mode = 3
-anchors_preset = 0
-offset_left = -176.0
-offset_top = -279.0
-offset_right = -136.0
-offset_bottom = -239.0
+[node name="Paddal" type="Sprite2D" parent="Area2D"]
+texture_filter = 1
+position = Vector2(-0.5, 14.5)
+texture = ExtResource("2_ch1lr")
 
-[node name="ball" type="Area2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.5, 14.5)
+shape = SubResource("RectangleShape2D_df468")
