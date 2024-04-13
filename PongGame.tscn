@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://b0qxgye6loht"]
+
+[ext_resource type="Shape2D" uid="uid://btye8falsh2kv" path="res://PongPaddle.tres" id="1_kcl7y"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Paddle" type="Area2D" parent="."]
+
+[node name="PongPaddle" type="CollisionShape2D" parent="Paddle"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+position = Vector2(50, 350)
+shape = ExtResource("1_kcl7y")
+
+[node name="Control" type="Control" parent="Paddle/PongPaddle"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -176.0
+offset_top = -279.0
+offset_right = -136.0
+offset_bottom = -239.0
+
+[node name="ball" type="Area2D" parent="."]
